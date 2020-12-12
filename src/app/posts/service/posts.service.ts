@@ -6,7 +6,7 @@ import { Post } from '../model/post.model';
 
 @Injectable({providedIn: 'root'})
 export class PostsService {
-  private posts: Post[] = [];
+  public posts: Post[] = [];
   private postsUpdated = new Subject<Post[]>();
 
   constructor (private http: HttpClient){}

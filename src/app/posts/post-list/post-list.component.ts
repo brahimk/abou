@@ -31,4 +31,19 @@ export class PostListComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.postsSub.unsubscribe();
   }
+
+  onclick(post:Post) {
+    alert(post.content);
+  }
+  
+  delete(post:Post) {
+    const index = this.posts.indexOf(post);
+    const index2 = this.postsService.posts.indexOf(post);
+    if (index > -1) {
+      this.posts.splice(index, 1);
+    }
+    if (index2 > -1) {
+      this.postsService.posts.splice(index2, 1);
+    }
+  }
 }
